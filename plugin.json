@@ -1,0 +1,5 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "sdd-architect",
+  "description": "Specialist AI Plugin for Spec-Driven Development (SDD) architecture, artifact scaffolding, and governance enforcement."
+}
