@@ -1,31 +1,14 @@
 ---
-id: "scaffold-sdd-artifact"
-name: "scaffold-sdd-artifact"
-description: "Generates new SDD artifacts (Rule, Skill, Spec, Agent, Workflow) by reading templates from res/"
-inputs:
-  artifact_type:
-    type: "string"
-    description: "The type of SDD artifact to generate"
-    enum: ["rule", "skill", "spec", "agent", "workflow"]
-  artifact_id:
-    type: "string"
-    description: "Unique identifier for the artifact (kebab-case or uppercase for rules)"
-  artifact_name:
-    type: "string"
-    description: "Human readable or kebab-case name"
-  target_path:
-    type: "string"
-    description: "Destination file path relative to project root"
-outputs:
-  status:
-    type: "string"
-    enum: ["success", "failure"]
-tools:
-  - "run_command"
-  - "view_file"
+name: scaffold-sdd-artifact
+description: Generates new SDD artifacts (Rule, Skill, Spec, Agent, Workflow) by reading templates from res/
 ---
 
 # Protocol for Scaffolding SDD Artifacts
+
+## Expected Parameters
+- **`artifact_type`**: The type of SDD artifact (`rule`, `skill`, `spec`, `agent`, `workflow`).
+- **`artifact_name`**: Unique kebab-case name (or uppercase ID for rules).
+- **`target_path`**: Destination file path relative to project root.
 
 1. **Locate Template:**
    - Locate Template in `res/<artifact_type>-template.md` relative to this skill folder.

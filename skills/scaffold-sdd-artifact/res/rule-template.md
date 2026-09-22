@@ -1,15 +1,10 @@
 ---
-id: "RULE-ID-HERE"
-name: "rule-name-kebab-case"
 description: "Short description of the rule and its purpose"
-severity: "error"
-scope:
-  paths:
-    - "src/**/*.ext"
-tags: ["tag1", "tag2"]
 ---
 
-# Rule Title
+# [Rule Title]
+
+> **Scope**: Applies to files matching `.agents/**/*` (or specified target path).
 
 ## Mandatory Guidelines
 1. [Clear description of the first guideline].

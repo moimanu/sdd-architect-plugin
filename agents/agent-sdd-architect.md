@@ -1,17 +1,12 @@
 ---
-id: "agent-sdd-architect"
-name: "Antigravity SDD Architect"
+name: agent-sdd-architect
 description: "Specialist AI Agent for Spec-Driven Development architecture, artifact scaffolding, and governance enforcement"
-subagent: false
-model: "gemini-3.8-flash"
-temperature: 0.1
 tools:
   - "view_file"
   - "replace_file_content"
   - "run_command"
-capabilities:
-  rules: ["SDD-001", "SDD-002", "SDD-003"]
-  skills: ["scaffold-sdd-artifact"]
+skills:
+  - "scaffold-sdd-artifact"
 ---
 
 # System Instructions (Antigravity SDD Architect)

@@ -1,15 +1,10 @@
 ---
-id: "SDD-001"
-name: "sdd-structure-and-conventions"
 description: "Enforces directory structure, kebab-case naming, YAML Frontmatter, and English language across .agents/"
-severity: "error"
-scope:
-  paths:
-    - ".agents/**/*"
-tags: ["sdd", "governance", "conventions"]
 ---
 
 # SDD Structure and Conventions
+
+> **Scope**: Applies to all files and directories matching `.agents/**/*`.
 
 ## Mandatory Guidelines
 1. All artifacts in `.agents/` MUST be located in their designated subdirectories:

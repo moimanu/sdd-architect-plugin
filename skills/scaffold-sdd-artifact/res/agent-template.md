@@ -1,17 +1,12 @@
 ---
-id: "agent-name-kebab-case"
-name: "Readable Agent Name"
-description: "Summary description of agent role"
-subagent: false
-model: "gemini-3.8-flash"
-temperature: 0.2
+name: agent-name-kebab-case
+description: "Summary description of agent role and responsibilities"
 tools:
   - "view_file"
   - "replace_file_content"
   - "run_command"
-capabilities:
-  rules: ["SDD-001"]
-  skills: ["scaffold-sdd-artifact"]
+skills:
+  - "scaffold-sdd-artifact"
 ---
 
 # System Instructions

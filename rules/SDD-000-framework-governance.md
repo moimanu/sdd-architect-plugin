@@ -1,15 +1,10 @@
 ---
-id: "SDD-000"
-name: "sdd-framework-governance"
 description: "Enforces taxonomy, template standards, automated scaffolding, and version control rules for the Antigravity SDD framework."
-severity: "error"
-scope:
-  paths:
-    - ".agents/**/*"
-tags: ["sdd", "governance", "specification"]
 ---
 
 # Antigravity SDD Governance & Framework Rules
+
+> **Scope**: Applies to all files and directories matching `.agents/**/*`.
 
 ## Mandatory Guidelines
 

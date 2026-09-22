@@ -1,16 +1,10 @@
 ---
-id: "SDD-002"
-name: "sdd-context-discovery"
 description: "Establishes guidelines for Lazy Loading, Header-first Indexing, and Explicit Asset Pointers via res/"
-severity: "warning"
-scope:
-  paths:
-    - ".agents/specs/**"
-    - ".agents/skills/**"
-tags: ["sdd", "context-discovery", "performance"]
 ---
 
 # SDD Context Discovery and Resource Loading
+
+> **Scope**: Applies to files under `.agents/specs/**` and `.agents/skills/**`.
 
 ## Mandatory Guidelines
 1. **Lazy Loading:** Context MUST NOT be loaded eagerly into the AI model context window. Agents MUST rely on demand-driven context loading.

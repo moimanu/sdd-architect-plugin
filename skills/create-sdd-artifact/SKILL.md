@@ -1,20 +1,14 @@
 ---
-id: "create-sdd-artifact"
-name: "create-sdd-artifact"
-description: "Orchestrates the interactive 3-stage process (Explore > Plan > Execute > Verify) for scaffolding SDD artifacts"
-inputs:
-  artifact_type:
-    type: "string"
-    description: "The type of SDD artifact to generate (rule, skill, spec, agent, workflow)"
-outputs:
-  status:
-    type: "string"
-    enum: ["success", "failure"]
+name: create-sdd-artifact
+description: Orchestrates the interactive 3-stage process (Explore > Plan > Execute > Verify) for scaffolding SDD artifacts
 ---
 
 # SDD Artifact Creation Execution Workflow
 
 This workflow orchestrates the interactive 3-stage process for scaffolding new Rules, Skills, Specs, Agents, or Workflows within the workspace.
+
+## Context Parameters
+- **`artifact_type`**: The type of SDD artifact to generate (`rule`, `skill`, `spec`, `agent`, `workflow`).
 
 ## Execution Steps
 1. **Explore:** `agent-sdd-architect` scans workspace to detect existing artifacts and avoid conflicts.

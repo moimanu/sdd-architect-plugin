@@ -1,16 +1,10 @@
 ---
-id: "SDD-003"
-name: "sdd-task-archiving"
 description: "Defines the SDD lifecycle phases (Explore > Plan > Execute > Verify) and task archiving standards"
-severity: "info"
-scope:
-  paths:
-    - ".agents/specs/archive/**"
-    - ".agents/specs/**"
-tags: ["sdd", "lifecycle", "archive"]
 ---
 
 # SDD Lifecycle and Task Archiving
+
+> **Scope**: Applies to task execution and specs under `.agents/specs/**`.
 
 ## Mandatory Guidelines
 1. **Lifecycle Phases:** All feature development and architectural execution MUST follow the 4-phase sequence:
