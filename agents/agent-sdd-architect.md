@@ -6,8 +6,8 @@ tools:
   - "replace_file_content"
   - "run_command"
 skills:
-  - "scaffold-sdd-artifact"
-  - "create-sdd-artifact"
+  - "skills/scaffold-sdd-artifact"
+  - "skills/create-sdd-artifact"
 ---
 
 # System Instructions (Antigravity SDD Architect)

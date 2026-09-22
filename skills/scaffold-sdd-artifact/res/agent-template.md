@@ -6,7 +6,7 @@ tools:
   - "replace_file_content"
   - "run_command"
 skills:
-  - "scaffold-sdd-artifact"
+  - "skills/scaffold-sdd-artifact"
 ---
 
 # System Instructions
