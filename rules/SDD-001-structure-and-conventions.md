@@ -1,28 +1,56 @@
 ---
-description: "Enforces directory structure, kebab-case naming, YAML Frontmatter, and English language across .agents/"
+description: "Defines the unified workspace directory structure, integrating .agents/ (behavior) and openspec/ (product specifications)."
 ---
 
-# SDD Structure and Conventions
+# SDD Structure and Conventions (Unified OpenSpec + .agents Architecture)
 
-> **Scope**: Applies to all files and directories matching `.agents/**/*`.
+> **Scope**: Applies to the entire workspace directory tree.
 
-## Mandatory Guidelines
-1. All artifacts in `.agents/` MUST be located in their designated subdirectories:
-   - Rules: `.agents/rules/<RULE-ID-name>.md`
-   - Skills: `.agents/skills/<skill-name>/SKILL.md`
-   - Specs: `.agents/specs/<module-name>/SPEC.md`
-   - Agents: `.agents/agents/<agent-name>.md`
-   - Workflows: `.agents/workflows/<workflow-name>.md`
-2. Naming Conventions:
-   - File and directory names MUST use `kebab-case`.
-   - Rule IDs MUST use uppercase letters and numbers (e.g., `SDD-001`, `ARCH-001`).
-   - Agent identifiers MUST start with the prefix `agent-` (e.g., `agent-sdd-architect`).
-   - Workflow identifiers MUST start with the prefix `wf-` (e.g., `wf-create-sdd-artifact`).
-3. All internal document prose and technical content MUST be written in English.
-4. Every file MUST begin with valid YAML Frontmatter conforming strictly to the schema in `SPEC-SDD-FRAMEWORK`.
+## 1. Mandatory Directory Structure
 
-## Anti-Patterns (What NOT to do)
-* DO NOT place arbitrary files at the root of `.agents/` outside designated directories.
-* DO NOT use camelCase, PascalCase, or snake_case for file or directory names.
-* DO NOT omit YAML Frontmatter or leave required frontmatter fields empty.
-* DO NOT write artifact documentation in languages other than English.
+The workspace MUST strictly maintain the following separation of responsibilities:
+
+```
+/
+├── .agents/                                # AGENT INFRASTRUCTURE AND BEHAVIORS
+│   ├── skills/<skill-name>/
+│   │   ├── SKILL.md                        # Mandatory: Manifest and instructions
+│   │   ├── scripts/                        # Optional: Helper scripts
+│   │   ├── examples/                       # Optional: Usage examples
+│   │   └── resources/                      # Optional: Schemas/references
+│   ├── agents/
+│   │   ├── <agent-name>.md                 # Single-file format
+│   │   └── <agent-name>/agent.md           # Directory format
+│   ├── rules/
+│   │   └── <RULE-ID-name>.md               # Persistent code/architecture rules
+│   ├── plugins/<plugin-name>/
+│   │   ├── plugin.json                     # Plugin manifest (Mandatory)
+│   │   ├── mcp_config.json                 # MCP configuration (Optional)
+│   │   ├── hooks.json                      # Plugin lifecycle hooks (Optional)
+│   │   ├── skills/                         # Plugin skills
+│   │   ├── agents/                         # Plugin agents
+│   │   └── rules/                          # Plugin rules
+│   └── hooks.json                          # Global workspace hooks
+│
+└── openspec/                               # SDD ARCHITECTURE AND LIFECYCLE (OpenSpec)
+    ├── specs/<module>/spec.md              # Living Specifications
+    ├── changes/<change-id>/
+    │   ├── proposal.md                     # Change rationale and context
+    │   └── specs/<module>/spec.md          # Deltas (ADDED / MODIFIED / REMOVED)
+    └── archive/YYYY-MM-DD_<change-id>/     # Immutable delivery archive
+```
+
+## 2. Naming Conventions and Format
+
+1. **Naming:** All directory and file names MUST use `kebab-case`.
+2. **Rule IDs:** Files in `.agents/rules/` MUST start with an uppercase ID prefix (e.g., `SDD-001-structure-and-conventions.md`).
+3. **Agent Prefixes:** Subagent files in `.agents/agents/` MUST use the `agent-` prefix (e.g., `agent-sdd-architect.md`).
+4. **Change Subfolder:** Folders in `openspec/changes/` MUST use a descriptive `kebab-case` identifier (e.g., `add-user-authentication`).
+5. **Language:** All procedural instructions, internal documentation, and specifications MUST be written in English.
+
+## 3. Anti-Patterns (What NOT to do)
+
+* **DO NOT** mix functional specifications inside `.agents/` — product artifacts belong exclusively in `openspec/`.
+* **DO NOT** use the obsolete structure `.agents/workflows/` — use **Skills** (`.agents/skills/`).
+* **DO NOT** create arbitrary loose files at the root of `.agents/` or `openspec/` outside the designated directories defined in this specification.
+* **DO NOT** modify specifications in `openspec/specs/` directly without going through the proposal flow in `openspec/changes/`.

@@ -5,10 +5,10 @@ description: Orchestrates the interactive 3-stage process (Explore > Plan > Exec
 
 # SDD Artifact Creation Execution Workflow
 
-This workflow orchestrates the interactive 3-stage process for scaffolding new Rules, Skills, Specs, Agents, or Workflows within the workspace.
+This skill orchestrates the interactive 3-stage process for scaffolding new Rules, Skills, Specs, Changes, Agents, or Plugins within the workspace.
 
 ## Context Parameters
-- **`artifact_type`**: The type of SDD artifact to generate (`rule`, `skill`, `spec`, `agent`, `workflow`).
+- **`artifact_type`**: The type of SDD artifact to generate (`rule`, `skill`, `spec`, `change`, `agent`, `plugin`).
 
 ## Execution Steps
 1. **Explore:** `agent-sdd-architect` scans workspace to detect existing artifacts and avoid conflicts.

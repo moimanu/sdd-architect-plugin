@@ -11,10 +11,10 @@ resources:
   - "res/schema.json"
 ---
 
-# Module Specification
+# Module Living Specification
 
 ## Context & Objectives
-[Summary of problem and technical solution].
+[Summary of domain context and long-term technical specifications].
 
 ## Functional Requirements
 * **[RF-01]** [Description of functional requirement 1].

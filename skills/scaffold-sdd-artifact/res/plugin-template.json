@@ -1,0 +1,5 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "plugin-name-kebab-case",
+  "description": "Summary description of plugin purpose and capabilities."
+}
