@@ -11,7 +11,7 @@ description: "Enforces taxonomy, template standards, automated scaffolding, and 
 1. **Taxonomy Enforcement:**
    - The system MUST support distinct declarative artifact types: **Rules**, **Skills**, **Agents**, and **Plugins** in `.agents/`, alongside **Living Specs** and **Changes** in `openspec/`.
 2. **Template Provision:**
-   - The framework MUST maintain standardized templates with valid YAML Frontmatter (or JSON schemas) for all artifact types under `skills/scaffold-sdd-artifact/res/`.
+   - The framework MUST maintain standardized templates with valid YAML Frontmatter (or JSON schemas) for all artifact types under `skills/render-sdd-template/res/`.
 3. **Automated Scaffolding:**
    - Automated tooling/skills MUST read `res/` templates and generate valid artifacts matching the project standards.
 4. **Version Control:**

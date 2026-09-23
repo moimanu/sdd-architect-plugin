@@ -4,7 +4,7 @@ description: "Defines the unified workspace directory structure, integrating .ag
 
 # SDD Structure and Conventions (Unified OpenSpec + .agents Architecture)
 
-> **Scope**: Applies to the entire workspace directory tree.
+> **Scope**: Applies to the entire workspace directory tree (`.agents/` and `openspec/`).
 
 ## 1. Mandatory Directory Structure
 
@@ -17,10 +17,10 @@ The workspace MUST strictly maintain the following separation of responsibilitie
 │   │   ├── SKILL.md                        # Mandatory: Manifest and instructions
 │   │   ├── scripts/                        # Optional: Helper scripts
 │   │   ├── examples/                       # Optional: Usage examples
-│   │   └── resources/                      # Optional: Schemas/references
+│   │   └── res/                            # Optional: Static templates/schemas/references
 │   ├── agents/
-│   │   ├── <agent-name>.md                 # Single-file format
-│   │   └── <agent-name>/agent.md           # Directory format
+│   │   ├── <agent-name>.md                 # Single-file format (Supported)
+│   │   └── <agent-name>/agent.md           # Directory format (Supported)
 │   ├── rules/
 │   │   └── <RULE-ID-name>.md               # Persistent code/architecture rules
 │   ├── plugins/<plugin-name>/
@@ -44,7 +44,7 @@ The workspace MUST strictly maintain the following separation of responsibilitie
 
 1. **Naming:** All directory and file names MUST use `kebab-case`.
 2. **Rule IDs:** Files in `.agents/rules/` MUST start with an uppercase ID prefix (e.g., `SDD-001-structure-and-conventions.md`).
-3. **Agent Prefixes:** Subagent files in `.agents/agents/` MUST use the `agent-` prefix (e.g., `agent-sdd-architect.md`).
+3. **Agent Prefixes and Formats:** Agent definitions in `.agents/agents/` MUST use the `agent-` prefix. Both single-file (`.agents/agents/<name>.md`) and directory-based (`.agents/agents/<name>/agent.md`) formats are explicitly permitted.
 4. **Change Subfolder:** Folders in `openspec/changes/` MUST use a descriptive `kebab-case` identifier (e.g., `add-user-authentication`).
 5. **Language:** All procedural instructions, internal documentation, and specifications MUST be written in English.
 
